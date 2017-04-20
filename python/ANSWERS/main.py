@@ -7,9 +7,11 @@ data30_array = []
 for row in csv_reader:
     data30_array.append(list(map(float, row)))
 func_data = array(data30_array)
-time = [0,0,2,2,4,7]*30/365
-visual =func_data[1:6,3:56]
+time = array([0,0,2,3,4,7])*30/365
+visual =func_data[0:6,2:56]
 [s,pnd,slope]=ANSWERS(visual,time)
 print("s = %f\n" %s)
-print("pnd = %f\n" %pnd)
-print("slope = %f\n" %slope)
+print(shape(pnd))
+print(pnd)
+print(shape(slope))
+print(slope)

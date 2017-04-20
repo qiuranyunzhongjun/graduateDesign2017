@@ -1,7 +1,7 @@
 from numpy import *
-
+from weibull import weibull
 def logMixtureDist(x, distFun, distPara, pi_):
-    [PDF, dPDF_dX, dPDF_dX2] = distFun(x, distPara, {'pdf', 'dPDF_dX', 'dPDF_dX2'})
+    [PDF, dPDF_dX, dPDF_dX2] = eval(distFun)(x, distPara, ['pdf', 'dPDF_dX', 'dPDF_dX2'])
     sumP = sum(pi_ * PDF, 0)
     logPDF = log(sumP)
     dLogPDF_dX = sum(pi_*dPDF_dX, 0) / sumP

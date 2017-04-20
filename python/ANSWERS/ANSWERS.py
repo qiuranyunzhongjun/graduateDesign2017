@@ -3,9 +3,9 @@ from STTrendAnalysis import STTrendAnalysis
 import csv
 
 def ANSWERS(vf, time):
-    if size(vf, 2) == 54:
-        delete(vf, 25, axis=1)
-        delete(vf, 34, axis=1)
+    if size(vf, 1) == 54:
+        vf = delete(vf, 25, axis=1)
+        vf = delete(vf, 33, axis=1)
     vf = vf + 1
     #load weibull_mixture_para_1offset.mat
     csv_reader = csv.reader(open('distPara_array.csv', encoding='utf-8'))
