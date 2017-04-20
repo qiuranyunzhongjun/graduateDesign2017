@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>青光眼病人数据</title>
+</head>
+<body>
+    {% if patients %}
+        <ul>
+            {% for patient in patients %}
+                <li><a href="{% url 'analyses:answers' patient.firstname %}">{{ patient.firstname }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <P> 没有病人信息</P>
+    {% endif %}
+</body>
+</html>
